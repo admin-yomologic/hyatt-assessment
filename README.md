@@ -63,6 +63,16 @@ This separation keeps style and interaction contracts centralized in shared UI, 
 
 ## Local Development
 
+### Quick Start From Clone
+
+```bash
+git clone https://github.com/admin-yomologic/hyatt-assessment.git
+cd hyatt-assessment
+git checkout reviewer/assessment-final
+npm run install:all
+npm run dev
+```
+
 ### One command from root
 
 1. Install dependencies for root, API, and web:
