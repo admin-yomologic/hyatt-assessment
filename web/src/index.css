@@ -1,0 +1,144 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@theme inline {
+    --font-heading: var(--font-sans);
+  --font-sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+    --color-ring: var(--ring);
+    --color-input: var(--input);
+    --color-border: var(--border);
+    --color-destructive: var(--destructive);
+    --color-accent-foreground: var(--accent-foreground);
+    --color-accent: var(--accent);
+    --color-muted-foreground: var(--muted-foreground);
+    --color-muted: var(--muted);
+    --color-secondary-foreground: var(--secondary-foreground);
+    --color-secondary: var(--secondary);
+    --color-primary-foreground: var(--primary-foreground);
+    --color-primary: var(--primary);
+    --color-popover-foreground: var(--popover-foreground);
+    --color-popover: var(--popover);
+    --color-card-foreground: var(--card-foreground);
+    --color-card: var(--card);
+    --color-foreground: var(--foreground);
+    --color-background: var(--background);
+    --radius-sm: calc(var(--radius) * 0.6);
+    --radius-md: calc(var(--radius) * 0.8);
+    --radius-lg: var(--radius);
+    --radius-xl: calc(var(--radius) * 1.4);
+    --radius-2xl: calc(var(--radius) * 1.8);
+    --radius-3xl: calc(var(--radius) * 2.2);
+    --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+:root {
+  --background: oklch(0.985 0.01 95);
+  --foreground: oklch(0.27 0.03 252);
+  --card: oklch(0.99 0.006 96);
+  --card-foreground: oklch(0.27 0.03 252);
+  --popover: oklch(0.99 0.006 96);
+  --popover-foreground: oklch(0.27 0.03 252);
+  --primary: oklch(0.5 0.11 247);
+  --primary-foreground: oklch(0.985 0.005 95);
+  --secondary: oklch(0.955 0.016 92);
+  --secondary-foreground: oklch(0.3 0.03 250);
+  --muted: oklch(0.95 0.01 95);
+  --muted-foreground: oklch(0.51 0.03 250);
+  --accent: oklch(0.93 0.025 226);
+  --accent-foreground: oklch(0.3 0.03 250);
+    --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.89 0.013 90);
+  --input: oklch(0.89 0.013 90);
+  --ring: oklch(0.64 0.09 246);
+    --radius: 0.625rem;
+
+    --app-bg-start: oklch(0.95 0.05 233);
+    --app-bg-mid: oklch(0.985 0.012 96);
+    --app-bg-end: oklch(0.97 0.022 102);
+    --surface-strong: oklch(0.99 0.007 96 / 0.95);
+    --surface: oklch(0.99 0.005 95 / 0.88);
+    --surface-subtle: oklch(0.975 0.009 96);
+    --eyebrow: oklch(0.52 0.1 242);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+    }
+  body {
+    @apply bg-background text-foreground;
+    }
+  html {
+    @apply font-sans;
+    }
+}
+
+@layer components {
+  .app-shell {
+    @apply min-h-screen px-4 py-8 sm:px-8;
+    background: radial-gradient(
+      120% 120% at 100% 0%,
+      var(--app-bg-start) 0%,
+      var(--app-bg-mid) 54%,
+      var(--app-bg-end) 100%
+    );
+  }
+
+  .app-hero {
+    @apply rounded-2xl border p-6 shadow-lg backdrop-blur;
+    border-color: color-mix(in oklch, var(--border), white 34%);
+    background-color: var(--surface-strong);
+    box-shadow: 0 16px 40px color-mix(in oklch, var(--primary) 10%, transparent);
+  }
+
+  .app-panel {
+    @apply rounded-2xl border p-4 shadow-sm sm:p-6;
+    border-color: color-mix(in oklch, var(--border), white 24%);
+    background-color: var(--surface);
+  }
+
+  .app-eyebrow {
+    @apply mb-2 text-xs font-semibold uppercase tracking-[0.2em];
+    color: var(--eyebrow);
+  }
+
+  .app-title {
+    @apply text-3xl font-semibold;
+    color: color-mix(in oklch, var(--foreground), black 8%);
+  }
+
+  .app-subtitle {
+    @apply mt-2 max-w-2xl text-sm;
+    color: var(--muted-foreground);
+  }
+
+  .app-state-box {
+    @apply rounded-xl border p-8 text-center;
+    border-color: color-mix(in oklch, var(--border), white 20%);
+    background-color: var(--surface);
+    color: var(--muted-foreground);
+  }
+
+  .app-state-box-error {
+    border-color: color-mix(in oklch, var(--destructive), white 40%);
+    background-color: color-mix(in oklch, var(--destructive), white 90%);
+    color: color-mix(in oklch, var(--destructive), black 8%);
+  }
+
+  .app-detail-card {
+    @apply rounded-lg border p-3;
+    border-color: var(--border);
+    background-color: var(--surface-subtle);
+  }
+
+  .app-detail-label {
+    @apply text-xs uppercase tracking-wide;
+    color: var(--muted-foreground);
+  }
+
+  .app-detail-value {
+    @apply mt-1 font-medium;
+    color: color-mix(in oklch, var(--foreground), black 8%);
+  }
+}

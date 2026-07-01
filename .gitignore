@@ -1,0 +1,29 @@
+# OS / editor
+.DS_Store
+.vscode/
+.idea/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Env / local secrets
+.env
+.env.*
+*.local
+
+# Node dependencies and build outputs
+node_modules/
+api/node_modules/
+web/node_modules/
+api/dist/
+web/dist/
+web/dist-ssr/
+
+# Personal/private docs (do not publish)
+DEVELOPMENT_PLAN.md
+IMPLEMENTATION_NOTES.md
+Ful Stack - Tech Assesment .docx
