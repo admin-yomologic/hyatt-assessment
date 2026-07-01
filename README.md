@@ -65,10 +65,10 @@ This separation keeps style and interaction contracts centralized in shared UI, 
 
 ### One command from root
 
-1. Install root dependencies:
-   ```bash
-   npm install
-   ```
+1. Install dependencies for root, API, and web:
+  ```bash
+  npm run install:all
+  ```
 2. Start both API and UI:
    ```bash
    npm run dev
